@@ -5,15 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GuessTheNumberPrettified;
-internal class GuessingGame
+public class GuessingGame
 {
+    public enum Result { TooLow, Correct, TooHigh }
     public bool Guessed { get; private set; }
     public int NumberOfGuessesUsed { get; private set; }
     public int MaxValue { get; set; }
+
     private int _correctValue;
-
-
-    public enum Result { TooLow, Correct, TooHigh }
 
     public GuessingGame(int maxValue)
     {
@@ -21,11 +20,11 @@ internal class GuessingGame
         this._correctValue = Random.Shared.Next(maxValue) + 1;
     }
 
-    internal Result Guess(int gæt)
+    internal Result Guess(int guess)
     {
         NumberOfGuessesUsed++;
-        if (gæt < _correctValue) { return Result.TooLow; }
-        else if (gæt == _correctValue) { Guessed = true; return Result.Correct; }
+        if (guess < _correctValue) { return Result.TooLow; }
+        else if (guess == _correctValue) { Guessed = true; return Result.Correct; }
         else { return Result.TooHigh; }
     }
 }
