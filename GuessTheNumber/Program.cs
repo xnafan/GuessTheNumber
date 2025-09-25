@@ -1,34 +1,33 @@
-﻿namespace GuessTheNumber
+﻿namespace GuessTheNumber;
+
+internal class Program
 {
-    internal class Program
+    private const int MaxValue = 20;
+    static void Main(string[] args)
     {
-        private const int MaxVærdi = 20;
-        static void Main(string[] args)
+        //Generate a number
+        int secretNumber = Random.Shared.Next(MaxValue) + 1;
+        int currentGuess;
+        do
         {
-
-
-            //Generer et tal
-            int korrektTal = Random.Shared.Next(MaxVærdi) + 1;
-            bool talErGættet = false;
-
+            bool validInput = false;
             do
             {
-                //Bed om et gæt
-                Console.Write($"Indtast et tal mellem 1 og {MaxVærdi}: ");
-                string? gætSomTekst = Console.ReadLine();
+                //get current guess from user
+                Console.Write($"Enter a number from 1 to {MaxValue}: ");
+                string? guessAsString = Console.ReadLine();
 
-                //konvertér indtastning til tal
-                int gæt = Convert.ToInt32(gætSomTekst);
+                //try converting the input to a number
+                validInput = int.TryParse(guessAsString, out currentGuess);
+                if (!validInput) { Console.WriteLine("Invalid input..."); }
+            } while (!validInput);
 
-                //Sammenlign gæt med tal
-                if (gæt == korrektTal) {Console.WriteLine("KORREKT!");talErGættet = true; }
-                else if (gæt > korrektTal) { Console.WriteLine("Du har gættet for højt!"); }
-                else {Console.WriteLine("Du har gættet for lavt!");}
+            //Compare current guess with secret number
+            if (currentGuess == secretNumber) { Console.WriteLine("Correct!"); }
+            else if (currentGuess > secretNumber) { Console.WriteLine("Your guess is too high!"); }
+            else { Console.WriteLine("Your guess is too low!"); }
 
-
-            } while (!talErGættet);
-
-        }
-
+        } while (currentGuess != secretNumber);
+        //keep going, while the current guess is not the secret number
     }
 }
