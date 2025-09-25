@@ -68,4 +68,13 @@ internal class Program
     }
 }
 ```
-The code also contains a [prettified version](https://github.com/xnafan/GuessTheNumber/tree/master/GuessTheNumberPrettified), where all logic is encapsulated in a [GuessingGame](https://github.com/xnafan/GuessTheNumber/blob/master/GuessTheNumberPrettified/GuessingGame.cs) class, so input and output is handled by the calling application, ensuring separation of concerns.
+The solution also contains a [prettified version](https://github.com/xnafan/GuessTheNumber/tree/master/GuessTheNumberPrettified) of the project, where all logic is encapsulated in a [GuessingGame](https://github.com/xnafan/GuessTheNumber/blob/master/GuessTheNumberPrettified/GuessingGame.cs) class, so input and output is handled by the calling application, ensuring separation of concerns.  
+
+#### The GuessingGame class  
+Here is a diagram of the GuessingGame class  
+<img width="307" height="444" alt="image" src="https://github.com/user-attachments/assets/77421a10-4969-4861-a623-4349fb90f449" />
+
+
+
+
+
