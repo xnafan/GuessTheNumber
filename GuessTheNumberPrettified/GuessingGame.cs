@@ -19,7 +19,7 @@ public class GuessingGame
     /// <summary>
     /// Has the number been guessed?
     /// </summary>
-    public bool Guessed { get; private set; }
+    public bool IsGuessed { get; private set; }
 
     /// <summary>
     /// How many calls to Guess() have been made
@@ -53,7 +53,7 @@ public class GuessingGame
     {
         NumberOfGuessesUsed++;
         if (guess < _secretValue) { return Result.TooLow; }
-        else if (guess == _secretValue) { Guessed = true; return Result.Correct; }
+        else if (guess == _secretValue) { IsGuessed = true; return Result.Correct; }
         else { return Result.TooHigh; }
     }
 }

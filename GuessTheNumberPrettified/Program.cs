@@ -31,6 +31,6 @@ internal class Program
 
             //write number of guesses used so far
             Console.WriteLine($"You've used {game.NumberOfGuessesUsed} guesses");
-        } while (!game.Guessed);
+        } while (!game.IsGuessed);
     }
 }
