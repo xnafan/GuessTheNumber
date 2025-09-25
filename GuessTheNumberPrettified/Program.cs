@@ -6,7 +6,7 @@ internal class Program
     {
         int maxValue = 20;
         GuessingGame game = new GuessingGame(maxValue);
-        while (!game.Guessed)
+        do
         {
             int currentGuess;
             bool validInput = false;
@@ -23,14 +23,14 @@ internal class Program
 
             //get result from the guessing game object
             GuessingGame.Result resultat = game.Guess(currentGuess);
-            
+
             //give feedback to user
-            if (resultat == GuessingGame.Result.Correct){Console.WriteLine("Korrekt");}
-            else if (resultat == GuessingGame.Result.TooLow){Console.WriteLine("For lavt");}
-            else{Console.WriteLine("For højt");}
+            if (resultat == GuessingGame.Result.Correct) { Console.WriteLine("Correct"); }
+            else if (resultat == GuessingGame.Result.TooLow) { Console.WriteLine("Too low"); }
+            else { Console.WriteLine("Too high"); }
 
             //write number of guesses used so far
-            Console.WriteLine($"Du har brugt {game.NumberOfGuessesUsed} gæt");
-        }
+            Console.WriteLine($"You've used {game.NumberOfGuessesUsed} guesses");
+        } while (!game.Guessed);
     }
 }
