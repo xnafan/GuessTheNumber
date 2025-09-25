@@ -12,7 +12,8 @@ The assignment is to code a small game where
 
 ## Flowchart
 Here you can see the logic for the game  
-<img width="440" height="500" alt="image" src="https://github.com/user-attachments/assets/04e3c06e-ae1c-44b9-849e-b41bf97b7977" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2a69166f-3d1a-4938-895c-83411d84195b" />
+
 
 
 ## Pseudocode
