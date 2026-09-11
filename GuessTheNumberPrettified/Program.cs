@@ -13,7 +13,7 @@ internal class Program
             do
             {
                 //get current guess from user
-                Console.Write($"Enter a number from 1 to {maxValue}: ");
+                Console.Write($"Guess the number (between 1 and {maxValue}) ");
                 string? guessAsString = Console.ReadLine();
 
                 //try converting the input to a number
@@ -22,11 +22,11 @@ internal class Program
             } while (!validInput);
 
             //get result from the guessing game object
-            GuessingGame.Result resultat = game.Guess(currentGuess);
+            GuessingGame.Result result = game.Guess(currentGuess);
 
             //give feedback to user
-            if (resultat == GuessingGame.Result.Correct) { Console.WriteLine("Correct"); }
-            else if (resultat == GuessingGame.Result.TooLow) { Console.WriteLine("Too low"); }
+            if (result == GuessingGame.Result.Correct) { Console.WriteLine("Correct"); }
+            else if (result == GuessingGame.Result.TooLow) { Console.WriteLine("Too low"); }
             else { Console.WriteLine("Too high"); }
 
             //write number of guesses used so far

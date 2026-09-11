@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GuessTheNumberPrettified;
+﻿namespace GuessTheNumberPrettified;
 
 /// <summary>
 /// This class encapsulates a "Guess the number" game, where you can keep guessing, receiving feedback in the form of "Lower, Higher or Correct". The game also counts the number of guesses used.
@@ -14,7 +8,7 @@ public class GuessingGame
     /// <summary>
     /// An enumeration signifying the result of a guess
     /// </summary>
-    public enum Result { Empty, TooLow, Correct, TooHigh }
+    public enum Result { None, TooLow, Correct, TooHigh }
 
     /// <summary>
     /// Has the number been guessed?

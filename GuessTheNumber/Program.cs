@@ -1,5 +1,4 @@
 ﻿namespace GuessTheNumber;
-
 internal class Program
 {
     private const int MaxValue = 20;
